@@ -1,9 +1,9 @@
 ---
 import "../styles/global.css";
-import { site, absUrl } from "../lib/site";
-interface Props { title?: string; description?: string; noindex?: boolean }
-const { title = site.seoTitle, description = site.seoDescription, noindex = false } = Astro.props;
-const canonical = new URL(Astro.url.pathname, site.siteUrl).href;
+import { site, absUrl, asset, noindex } from "../lib/site";
+interface Props { title?: string; description?: string }
+const { title = site.seoTitle, description = site.seoDescription } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = absUrl(site.ogImage || site.logo);
 ---
 <!doctype html>
@@ -30,9 +30,9 @@ const ogImage = absUrl(site.ogImage || site.logo);
     <meta name="twitter:description" content={description} />
     {ogImage && <meta name="twitter:image" content={ogImage} />}
 
-    <link rel="icon" href={site.logo || "/favicon.svg"} />
-    <link rel="sitemap" href="/sitemap.xml" />
-    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary" />
+    <link rel="icon" href={asset(site.logo || "/favicon.svg")} />
+    <link rel="sitemap" href={asset("/sitemap.xml")} />
+    <link rel="alternate" type="text/plain" href={asset("/llms.txt")} title="LLM summary" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />

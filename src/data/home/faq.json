@@ -1,0 +1,29 @@
+{
+  "title": "Pertanyaan yang sering ditanyakan",
+  "items": [
+    {
+      "question": "Di mana lokasi workshop NAMA STUDIO?",
+      "answer": "Workshop kami berada di Bandung, Jawa Barat. Kami melayani pelanggan di Bandung dan sekitarnya untuk ambil langsung, serta mengirim ke seluruh Indonesia lewat ekspedisi."
+    },
+    {
+      "question": "Layanan apa saja yang tersedia?",
+      "answer": "3D printing FDM dan resin SLA, UV printing flatbed & rotary (akrilik, kayu, logam, tumbler), laser cutting & grafir CO2 (area 30×30 cm), serta cetak stiker vinyl, chromo, dan die-cut."
+    },
+    {
+      "question": "Apakah bisa order satuan?",
+      "answer": "Bisa. Kami menerima order satuan untuk prototype maupun hadiah, dan juga produksi batch untuk merchandise atau kebutuhan perusahaan."
+    },
+    {
+      "question": "Berapa lama waktu pengerjaan?",
+      "answer": "Umumnya 1–3 hari kerja untuk order satuan, dan 3–7 hari kerja untuk order batch, tergantung ukuran, jumlah, dan antrean produksi. Estimasi pasti diberikan saat konsultasi."
+    },
+    {
+      "question": "File desain apa yang diterima?",
+      "answer": "Untuk 3D print: STL, OBJ, 3MF, atau STEP. Untuk laser cutting dan UV print: AI, SVG, PDF, atau DXF. Belum punya desain? Tim kami bisa bantu membuatkan."
+    },
+    {
+      "question": "Bagaimana cara pesan dan minta penawaran harga?",
+      "answer": "Kirim detail kebutuhan (foto/desain, ukuran, bahan, jumlah) lewat WhatsApp. Konsultasi gratis, dan penawaran harga dikirim setelah detail diterima."
+    }
+  ]
+}

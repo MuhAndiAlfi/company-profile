@@ -1,0 +1,29 @@
+{
+  "title": "Dengar apa kata pelanggan kami",
+  "items": [
+    {
+      "name": "Rina",
+      "date": "2026-09-12",
+      "rating": 5,
+      "text": "Recommended seller, hasilnya rapi banget."
+    },
+    {
+      "name": "Budi",
+      "date": "2026-08-30",
+      "rating": 5,
+      "text": "Mantap, pengerjaan cepat dan sesuai request."
+    },
+    {
+      "name": "Sari",
+      "date": "2026-08-14",
+      "rating": 5,
+      "text": "Wajib order lagi, adminnya fast response."
+    },
+    {
+      "name": "Dimas",
+      "date": "2026-07-21",
+      "rating": 5,
+      "text": "Trusted seller, rapih dan cepat."
+    }
+  ]
+}

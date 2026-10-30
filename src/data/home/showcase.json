@@ -1,0 +1,30 @@
+{
+  "title": "Hasil Cetak Real",
+  "subtitle": "Beberapa project yang sudah kami kerjakan.",
+  "items": [
+    {
+      "image": "",
+      "category": "3D Print",
+      "title": "Batch Custom Keychain & Box",
+      "subtitle": "FDM Precision + Custom Packaging"
+    },
+    {
+      "image": "",
+      "category": "Printing",
+      "title": "Cetak Buku & Notebook Spiral",
+      "subtitle": "Full Color Cover + Jilid Spiral"
+    },
+    {
+      "image": "",
+      "category": "3D Print",
+      "title": "Merchandise Keychain Series",
+      "subtitle": "PLA+ Durable & High Detail"
+    },
+    {
+      "image": "",
+      "category": "Laser + UV",
+      "title": "Akrilik Signage & Plakat",
+      "subtitle": "Laser CO2 + Mirror UV Print"
+    }
+  ]
+}

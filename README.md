@@ -1,27 +1,35 @@
-# Company Profile (Astro + Tailwind + Decap CMS)
+# Company Profile (Astro + Tailwind + Sveltia CMS)
 
-Web statis, tanpa database. Semua konten ada di `src/data/*.json` dan diedit lewat `/admin`.
+Web statis, tanpa database. Semua konten ada di `src/data/` (file JSON) dan diedit lewat `/admin/`.
 
 ## Jalankan lokal
 
-Buka 2 terminal:
-
 ```bash
-npm run dev   # website  -> http://localhost:4321
-npm run cms   # server CMS lokal (Decap)
+npm install
+npm run dev        # http://localhost:4321
 ```
 
-Buka http://localhost:4321/admin/ lalu klik **Login** (tanpa password saat lokal).
-Di sana bisa tambah, edit, dan hapus layanan, klien, showcase, testimoni, kontak, dll.
-Gambar yang di-upload tersimpan di `public/uploads/`.
+Edit konten: buka http://localhost:4321/admin/ di **Chrome/Edge** → **Work with Local Repository** →
+pilih folder project ini. Perubahan langsung tersimpan ke file JSON (tidak perlu server CMS terpisah).
+
+## Edit konten online
+
+Buka `https://domain-kamu/admin/` → **Sign In Using Access Token** → tempel GitHub Personal Access Token
+(fine-grained, hanya repo ini, permission **Contents: Read and write**).
+Setiap simpan = commit ke GitHub → website build ulang otomatis.
 
 ## Deploy
 
-`npm run build` menghasilkan folder `dist/` (HTML statis).
+| Target | Cara |
+|---|---|
+| **Showcase** — GitHub Pages | Otomatis via `.github/workflows/deploy.yml` setiap push ke `main`. Versi ini `noindex`. Aktifkan di repo: Settings → Pages → Source: **GitHub Actions**. |
+| **Final** — hosting berbayar | `npm run build` lalu upload isi folder `dist/` (atau otomatis via GitHub Actions + FTP). |
 
-Supaya `/admin` bisa dipakai di versi online, deploy ke **Netlify** dari repo Git:
-1. Push project ke GitHub, lalu import ke Netlify.
-2. Di Netlify: Site settings → Identity → Enable, lalu Services → Git Gateway → Enable.
-3. Undang email admin lewat Identity → Invite users.
+Variabel build (hanya untuk GitHub Pages): `SITE_URL`, `BASE_PATH`, `PUBLIC_NOINDEX=true`.
+Untuk hosting final biarkan kosong — URL diambil dari **Pengaturan → URL website final** di CMS.
 
-Setiap simpan dari CMS akan membuat commit ke repo, lalu Netlify build ulang otomatis.
+## SEO / GEO / AEO
+
+- Meta tags, Open Graph, canonical → `src/layouts/Layout.astro`
+- Schema.org JSON-LD (LocalBusiness, FAQPage) → `src/lib/site.ts`
+- `/robots.txt`, `/sitemap.xml`, `/llms.txt` → `src/pages/*.ts` (otomatis dari data CMS)

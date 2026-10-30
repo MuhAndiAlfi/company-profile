@@ -1,0 +1,26 @@
+{
+  "title": "Solusi Manufaktur Custom Lengkap",
+  "subtitle": "Dari prototype satuan sampai produksi batch, semua dikerjakan di satu workshop.",
+  "items": [
+    {
+      "icon": "cube",
+      "title": "3D Printing Services",
+      "description": "FDM (Bambu Lab) & SLA Resin untuk prototype, part fungsional, dan miniatur detail tinggi."
+    },
+    {
+      "icon": "printer",
+      "title": "UV Printing Custom",
+      "description": "Flatbed & Rotary UV untuk akrilik, kayu, logam, tumbler, dan berbagai media keras."
+    },
+    {
+      "icon": "laser",
+      "title": "Laser CO2 Cutting",
+      "description": "Potong & grafir akrilik, kayu, MDF, dan kulit dengan area kerja 30×30 cm."
+    },
+    {
+      "icon": "tag",
+      "title": "Custom Printing",
+      "description": "Stiker vinyl, chromo, dan die-cut untuk label produk, kemasan, dan branding."
+    }
+  ]
+}

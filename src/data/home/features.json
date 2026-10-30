@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "label": "Kenapa Pilih Kami",
+      "title": "Butuh hasil cetak presisi tanpa drama?",
+      "description": "Kami menjaga ketepatan waktu, detail di setiap hasil cetak, dan komunikasi yang transparan dari awal konsultasi sampai barang diterima.",
+      "image": "",
+      "buttonText": "",
+      "buttonUrl": ""
+    },
+    {
+      "label": "Portofolio & Testimoni",
+      "title": "Kreativitas Anda, kami wujudkan nyata",
+      "description": "Lihat ratusan project dan testimoni klien kami langsung di Instagram.",
+      "image": "",
+      "buttonText": "Lihat di Instagram",
+      "buttonUrl": "https://instagram.com/"
+    },
+    {
+      "label": "Teknologi & Kapasitas",
+      "title": "Mesin mutakhir untuk detail sempurna",
+      "description": "Kombinasi 3D Printing, CO2 Laser Cutting, dan UV Printing membuat kami bisa mengerjakan project kompleks dalam satu atap.",
+      "image": "",
+      "buttonText": "",
+      "buttonUrl": ""
+    }
+  ]
+}

@@ -1,7 +1,26 @@
 import settings from "../data/settings.json";
-import home from "../data/home.json";
+import hero from "../data/home/hero.json";
+import services from "../data/home/services.json";
+import clients from "../data/home/clients.json";
+import features from "../data/home/features.json";
+import showcase from "../data/home/showcase.json";
+import testimonials from "../data/home/testimonials.json";
+import faq from "../data/home/faq.json";
 
 export const site = settings;
+export const home = { hero, services, clients, features: features.items, showcase, testimonials, faq };
+
+// Base path: "/" di hosting sendiri, "/company-profile/" di GitHub Pages (diatur lewat env saat build)
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+// Path "/uploads/x.jpg" dari CMS → "/company-profile/uploads/x.jpg" kalau ada base path
+export const asset = (path: string) => (path.startsWith("/") ? `${base}${path}` : path);
+
+// URL publik website; env SITE_URL (saat build) menimpa isian di CMS
+const siteOrigin = import.meta.env.SITE ?? settings.siteUrl;
+export const siteRoot = new URL(`${base}/`, siteOrigin).href;
+export const absUrl = (path: string) => (path ? new URL(asset(path), siteOrigin).href : undefined);
+
+export const noindex = import.meta.env.PUBLIC_NOINDEX === "true";
 
 export const waLink = `https://wa.me/${settings.whatsapp}?text=${encodeURIComponent(settings.waMessage)}`;
 
@@ -12,11 +31,9 @@ export const fullAddress = [settings.streetAddress, settings.city, settings.prov
 export const hoursText = (h: (typeof settings.hours)[number]) =>
   h.closed ? "Tutup" : `${h.opens.replace(":", ".")} – ${h.closes.replace(":", ".")} WIB`;
 
-export const absUrl = (path: string) => (path ? new URL(path, settings.siteUrl).href : undefined);
-
 // Data terstruktur Schema.org: dibaca Google (rich result) dan mesin AI untuk memahami bisnis ini.
 export function structuredData() {
-  const url = new URL("/", settings.siteUrl).href;
+  const url = siteRoot;
   const id = `${url}#business`;
   const sameAs = [settings.instagramUrl, settings.marketplaceUrl, settings.googleMapsUrl].filter(Boolean);
 

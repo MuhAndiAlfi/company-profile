@@ -1,6 +1,5 @@
 import type { APIRoute } from "astro";
-import home from "../data/home.json";
-import { site, fullAddress, hoursText, waLink } from "../lib/site";
+import { site, home, siteRoot, fullAddress, hoursText, waLink } from "../lib/site";
 
 // Baris hanya ditulis kalau datanya diisi di CMS
 const opt = (value: unknown, line: string) => (value ? [line] : []);
@@ -19,7 +18,7 @@ export const GET: APIRoute = () => {
     `- Lokasi: ${fullAddress}, Indonesia`,
     ...opt(site.foundingYear, `- Berdiri sejak: ${site.foundingYear}`),
     `- Area layanan: ${site.areaServed.map((a) => a.name).join(", ")}`,
-    `- Website: ${new URL("/", site.siteUrl).href}`,
+    `- Website: ${siteRoot}`,
     "",
     "## Layanan",
     ...home.services.items.map((s) => `- **${s.title}**: ${s.description}`),
