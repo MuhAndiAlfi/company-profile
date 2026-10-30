@@ -2,15 +2,15 @@
 import Layout from "../layouts/Layout.astro";
 import Img from "../components/Img.astro";
 import Icon from "../components/Icon.astro";
-import settings from "../data/settings.json";
 import home from "../data/home.json";
+import { site as settings, waLink, fullAddress, hoursText, structuredData } from "../lib/site";
 
-const { hero, services, clients, features, showcase, testimonials } = home;
-const waLink = `https://wa.me/${settings.whatsapp}?text=${encodeURIComponent(settings.waMessage)}`;
+const { hero, services, clients, features, showcase, testimonials, faq } = home;
 const nav = [
   { label: "Layanan", href: "#services" },
   { label: "Partner / Klien", href: "#klien" },
   { label: "Portofolio", href: "#portfolio" },
+  { label: "FAQ", href: "#faq" },
 ];
 const formatDate = (d: string) =>
   new Date(d).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" });
@@ -19,6 +19,8 @@ const marquee = [...clients.items, ...clients.items];
 ---
 
 <Layout>
+  <script slot="head" type="application/ld+json" is:inline set:html={structuredData()} />
+
   <!-- Header -->
   <header class="sticky top-0 z-40 border-b border-slate-100 bg-white/90 backdrop-blur">
     <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
@@ -197,6 +199,29 @@ const marquee = [...clients.items, ...clients.items];
       </div>
     </section>
 
+    <!-- FAQ: jawaban singkat & jelas, gampang dikutip Google dan AI (AEO) -->
+    {faq.items.length > 0 && (
+      <section id="faq" class="scroll-mt-20 bg-slate-50 py-20">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6">
+          <div class="text-center">
+            <p class="text-sm font-semibold uppercase tracking-wider text-brand-600">• FAQ</p>
+            <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">{faq.title}</h2>
+          </div>
+          <div class="mt-10 space-y-3">
+            {faq.items.map((f, i) => (
+              <details class="group rounded-2xl border border-slate-200 bg-white p-5 open:shadow-sm" open={i === 0}>
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold [&::-webkit-details-marker]:hidden">
+                  <h3>{f.question}</h3>
+                  <span class="text-xl text-brand-500 transition group-open:rotate-45">+</span>
+                </summary>
+                <p class="mt-3 leading-relaxed text-slate-600">{f.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
     <!-- CTA -->
     <section class="px-4 pb-20 sm:px-6">
       <div class="mx-auto max-w-7xl rounded-3xl bg-brand-500 px-6 py-14 text-center text-white sm:px-12">
@@ -214,7 +239,7 @@ const marquee = [...clients.items, ...clients.items];
     <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
       <div>
         <p class="text-lg font-extrabold text-white">{settings.brandName}</p>
-        <p class="mt-3 text-sm leading-relaxed">{settings.footerDescription}</p>
+        <p class="mt-3 text-sm leading-relaxed">{settings.description}</p>
         <div class="mt-5 flex flex-col gap-2 text-sm">
           <a href={settings.instagramUrl} target="_blank" rel="noopener" class="hover:text-brand-500">Instagram {settings.instagramHandle}</a>
           <a href={settings.marketplaceUrl} target="_blank" rel="noopener" class="hover:text-brand-500">{settings.marketplaceLabel}</a>
@@ -228,13 +253,15 @@ const marquee = [...clients.items, ...clients.items];
       </div>
       <div>
         <p class="font-semibold text-white">Lokasi</p>
-        <p class="mt-4 text-sm">{settings.address}</p>
-        <a href={settings.mapsUrl} target="_blank" rel="noopener" class="mt-2 inline-block text-sm text-brand-500 hover:underline">Buka Google Maps →</a>
+        <address class="mt-4 text-sm not-italic">{fullAddress}</address>
+        {settings.googleMapsUrl && (
+          <a href={settings.googleMapsUrl} target="_blank" rel="noopener" class="mt-2 inline-block text-sm text-brand-500 hover:underline">Buka Google Maps →</a>
+        )}
       </div>
       <div>
         <p class="font-semibold text-white">Jam Operasional</p>
         <ul class="mt-4 space-y-2 text-sm">
-          {settings.hours.map((h) => <li><span class="block text-white">{h.day}</span>{h.time}</li>)}
+          {settings.hours.map((h) => <li><span class="block text-white">{h.label}</span>{hoursText(h)}</li>)}
         </ul>
       </div>
     </div>

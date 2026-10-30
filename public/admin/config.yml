@@ -107,27 +107,75 @@ collections:
                   - { label: Rating, name: rating, widget: number, value_type: int, min: 1, max: 5, default: 5 }
                   - { label: Ulasan, name: text, widget: text }
 
+          - label: FAQ (Tanya Jawab) — penting untuk SEO & AI
+            name: faq
+            widget: object
+            fields:
+              - { label: Judul, name: title, widget: string }
+              - label: Daftar pertanyaan
+                name: items
+                widget: list
+                summary: "{{fields.question}}"
+                hint: "Tulis pertanyaan seperti cara orang bertanya ke Google/ChatGPT. Jawaban singkat, jelas, sebut nama kota."
+                fields:
+                  - { label: Pertanyaan, name: question, widget: string }
+                  - { label: Jawaban, name: answer, widget: text }
+
       - name: settings
         label: Pengaturan & Kontak
         file: src/data/settings.json
         fields:
+          - { label: "URL website (contoh: https://namastudio.id)", name: siteUrl, widget: string }
           - { label: Nama brand, name: brandName, widget: string }
           - { label: Tagline, name: brandTagline, widget: string }
           - { label: Logo, name: logo, widget: image, required: false }
+
+          - { label: "Judul SEO (tampil di Google, ±60 karakter, sebut layanan + kota)", name: seoTitle, widget: string }
+          - { label: "Deskripsi SEO (tampil di Google, ±155 karakter)", name: seoDescription, widget: text }
+          - { label: "Gambar share (1200×630, tampil saat link dibagikan di WA/medsos)", name: ogImage, widget: image, required: false }
+          - { label: "Tentang bisnis (1–2 kalimat faktual: siapa, apa, di mana) — dipakai footer & AI", name: description, widget: text }
+          - { label: Tahun berdiri, name: foundingYear, widget: string, required: false }
+
           - { label: "Nomor WhatsApp (format 628xxx)", name: whatsapp, widget: string }
           - { label: Pesan awal WhatsApp, name: waMessage, widget: string }
+          - { label: Email, name: email, widget: string, required: false }
           - { label: Username Instagram, name: instagramHandle, widget: string }
           - { label: Link Instagram, name: instagramUrl, widget: string }
           - { label: Nama marketplace, name: marketplaceLabel, widget: string }
           - { label: Link marketplace, name: marketplaceUrl, widget: string }
+          - { label: Link Google Maps / Google Business Profile, name: googleMapsUrl, widget: string, required: false }
           - { label: PDF Katalog, name: catalogPdf, widget: file, required: false }
-          - { label: Deskripsi footer, name: footerDescription, widget: text }
-          - { label: Alamat, name: address, widget: string }
-          - { label: Link Google Maps, name: mapsUrl, widget: string }
+
+          - { label: Alamat jalan, name: streetAddress, widget: string }
+          - { label: Kota, name: city, widget: string }
+          - { label: Provinsi, name: province, widget: string }
+          - { label: Kode pos, name: postalCode, widget: string }
+          - { label: "Latitude (opsional, dari Google Maps)", name: latitude, widget: string, required: false }
+          - { label: "Longitude (opsional, dari Google Maps)", name: longitude, widget: string, required: false }
+          - label: Area layanan
+            name: areaServed
+            widget: list
+            summary: "{{fields.name}}"
+            fields: [{ label: Nama area, name: name, widget: string }]
+
           - label: Jam operasional
             name: hours
             widget: list
-            summary: "{{fields.day}}: {{fields.time}}"
+            summary: "{{fields.label}}"
             fields:
-              - { label: Hari, name: day, widget: string }
-              - { label: Jam, name: time, widget: string }
+              - { label: "Label (contoh: Senin – Sabtu)", name: label, widget: string }
+              - label: Hari
+                name: days
+                widget: select
+                multiple: true
+                options:
+                  - { label: Senin, value: Monday }
+                  - { label: Selasa, value: Tuesday }
+                  - { label: Rabu, value: Wednesday }
+                  - { label: Kamis, value: Thursday }
+                  - { label: Jumat, value: Friday }
+                  - { label: Sabtu, value: Saturday }
+                  - { label: Minggu, value: Sunday }
+              - { label: Tutup, name: closed, widget: boolean, default: false }
+              - { label: "Jam buka (HH:MM)", name: opens, widget: string, required: false }
+              - { label: "Jam tutup (HH:MM)", name: closes, widget: string, required: false }
