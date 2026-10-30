@@ -1,0 +1,133 @@
+# Login via Netlify Identity (git-gateway). Ganti sesuai hosting kalau perlu.
+backend:
+  name: git-gateway
+  branch: main
+
+# Saat `npm run cms` jalan, CMS langsung menulis ke file lokal tanpa login
+local_backend: true
+
+locale: en
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: pages
+    label: Konten Website
+    editor: { preview: false }
+    files:
+      - name: home
+        label: Halaman Utama
+        file: src/data/home.json
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Label kecil, name: badge, widget: string }
+              - { label: Judul, name: title, widget: string }
+              - { label: Deskripsi, name: description, widget: text }
+              - { label: Gambar, name: image, widget: image, required: false }
+              - label: Poin unggulan
+                name: highlights
+                widget: list
+                fields: [{ label: Teks, name: text, widget: string }]
+
+          - label: Layanan
+            name: services
+            widget: object
+            fields:
+              - { label: Judul, name: title, widget: string }
+              - { label: Subjudul, name: subtitle, widget: text }
+              - label: Daftar layanan
+                name: items
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - label: Ikon
+                    name: icon
+                    widget: select
+                    options: [cube, printer, laser, tag, star, check]
+                    default: cube
+                  - { label: Judul, name: title, widget: string }
+                  - { label: Deskripsi, name: description, widget: text }
+
+          - label: Partner / Klien
+            name: clients
+            widget: object
+            fields:
+              - { label: Judul, name: title, widget: string }
+              - label: Daftar klien
+                name: items
+                widget: list
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: Nama, name: name, widget: string }
+                  - { label: Logo, name: logo, widget: image, required: false }
+
+          - label: Section gambar & teks (Kenapa Kami, Portofolio, Teknologi, dst.)
+            name: features
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Label kecil, name: label, widget: string }
+              - { label: Judul, name: title, widget: string }
+              - { label: Deskripsi, name: description, widget: text }
+              - { label: Gambar, name: image, widget: image, required: false }
+              - { label: Teks tombol (opsional), name: buttonText, widget: string, required: false }
+              - { label: Link tombol (opsional), name: buttonUrl, widget: string, required: false }
+
+          - label: Showcase Karya
+            name: showcase
+            widget: object
+            fields:
+              - { label: Judul, name: title, widget: string }
+              - { label: Subjudul, name: subtitle, widget: string }
+              - label: Daftar karya
+                name: items
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Gambar, name: image, widget: image, required: false }
+                  - { label: Kategori, name: category, widget: string }
+                  - { label: Judul, name: title, widget: string }
+                  - { label: Subjudul, name: subtitle, widget: string }
+
+          - label: Testimoni
+            name: testimonials
+            widget: object
+            fields:
+              - { label: Judul, name: title, widget: string }
+              - label: Daftar testimoni
+                name: items
+                widget: list
+                summary: "{{fields.name}} — {{fields.text}}"
+                fields:
+                  - { label: Nama, name: name, widget: string }
+                  - { label: Tanggal, name: date, widget: datetime, time_format: false, date_format: "DD/MM/YYYY", format: "YYYY-MM-DD" }
+                  - { label: Rating, name: rating, widget: number, value_type: int, min: 1, max: 5, default: 5 }
+                  - { label: Ulasan, name: text, widget: text }
+
+      - name: settings
+        label: Pengaturan & Kontak
+        file: src/data/settings.json
+        fields:
+          - { label: Nama brand, name: brandName, widget: string }
+          - { label: Tagline, name: brandTagline, widget: string }
+          - { label: Logo, name: logo, widget: image, required: false }
+          - { label: "Nomor WhatsApp (format 628xxx)", name: whatsapp, widget: string }
+          - { label: Pesan awal WhatsApp, name: waMessage, widget: string }
+          - { label: Username Instagram, name: instagramHandle, widget: string }
+          - { label: Link Instagram, name: instagramUrl, widget: string }
+          - { label: Nama marketplace, name: marketplaceLabel, widget: string }
+          - { label: Link marketplace, name: marketplaceUrl, widget: string }
+          - { label: PDF Katalog, name: catalogPdf, widget: file, required: false }
+          - { label: Deskripsi footer, name: footerDescription, widget: text }
+          - { label: Alamat, name: address, widget: string }
+          - { label: Link Google Maps, name: mapsUrl, widget: string }
+          - label: Jam operasional
+            name: hours
+            widget: list
+            summary: "{{fields.day}}: {{fields.time}}"
+            fields:
+              - { label: Hari, name: day, widget: string }
+              - { label: Jam, name: time, widget: string }

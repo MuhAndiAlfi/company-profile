@@ -1,0 +1,27 @@
+---
+// Halaman CMS (Decap). Konfigurasi field ada di public/admin/config.yml
+// Script dikunci versi + hash SRI: kalau isi file di CDN berubah, browser menolak menjalankannya.
+// Saat upgrade versi, hitung ulang hash: curl -sL <url> | openssl dgst -sha384 -binary | openssl base64 -A
+---
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Admin CMS</title>
+    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
+    <script
+      is:inline
+      src="https://unpkg.com/netlify-identity-widget@2.0.3/build/netlify-identity-widget.js"
+      integrity="sha384-MDUpeNysRoXS3J89jBylG2fdrQQ0dwDBTXhXGt3XQCgsFF92tnRKZS5vCKNs3XhD"
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <script
+      is:inline
+      src="https://unpkg.com/decap-cms@3.17.3/dist/decap-cms.js"
+      integrity="sha384-RWRzuHfiZSWCt3nEvG7B0v3cMgM1C2UuJmgBSL92GQh4uXmNSkbcthql/mNBqvjr"
+      crossorigin="anonymous"></script>
+  </body>
+</html>

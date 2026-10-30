@@ -1,0 +1,180 @@
+{
+  "hero": {
+    "badge": "Solusi Cetak Kustom & Prototype Presisi",
+    "title": "Jasa 3D Print, UV Print & Laser CO2 di Bandung",
+    "description": "Prototype engineering, merchandise custom, 3D custom frame, gantungan kunci, cetak kemasan, hingga plakat akrilik — dikerjakan presisi dan tepat waktu.",
+    "image": "",
+    "highlights": [
+      {
+        "text": "UV Flatbed High-Res"
+      },
+      {
+        "text": "Presisi Tinggi"
+      },
+      {
+        "text": "Batch Order"
+      }
+    ]
+  },
+  "services": {
+    "title": "Solusi Manufaktur Custom Lengkap",
+    "subtitle": "Dari prototype satuan sampai produksi batch, semua dikerjakan di satu workshop.",
+    "items": [
+      {
+        "icon": "cube",
+        "title": "3D Printing Services",
+        "description": "FDM (Bambu Lab) & SLA Resin untuk prototype, part fungsional, dan miniatur detail tinggi."
+      },
+      {
+        "icon": "printer",
+        "title": "UV Printing Custom",
+        "description": "Flatbed & Rotary UV untuk akrilik, kayu, logam, tumbler, dan berbagai media keras."
+      },
+      {
+        "icon": "laser",
+        "title": "Laser CO2 Cutting",
+        "description": "Potong & grafir akrilik, kayu, MDF, dan kulit dengan area kerja 30×30 cm."
+      },
+      {
+        "icon": "tag",
+        "title": "Custom Printing",
+        "description": "Stiker vinyl, chromo, dan die-cut untuk label produk, kemasan, dan branding."
+      }
+    ]
+  },
+  "clients": {
+    "title": "Dipercaya Oleh",
+    "items": [
+      {
+        "name": "Klien Satu",
+        "logo": ""
+      },
+      {
+        "name": "Klien Dua",
+        "logo": ""
+      },
+      {
+        "name": "Klien Tiga",
+        "logo": ""
+      },
+      {
+        "name": "Klien Empat",
+        "logo": ""
+      }
+    ]
+  },
+  "features": [
+    {
+      "label": "Kenapa Pilih Kami",
+      "title": "Butuh hasil cetak presisi tanpa drama?",
+      "description": "Kami menjaga ketepatan waktu, detail di setiap hasil cetak, dan komunikasi yang transparan dari awal konsultasi sampai barang diterima.",
+      "image": "",
+      "buttonText": "",
+      "buttonUrl": ""
+    },
+    {
+      "label": "Portofolio & Testimoni",
+      "title": "Kreativitas Anda, kami wujudkan nyata",
+      "description": "Lihat ratusan project dan testimoni klien kami langsung di Instagram.",
+      "image": "",
+      "buttonText": "Lihat di Instagram",
+      "buttonUrl": "https://instagram.com/"
+    },
+    {
+      "label": "Teknologi & Kapasitas",
+      "title": "Mesin mutakhir untuk detail sempurna",
+      "description": "Kombinasi 3D Printing, CO2 Laser Cutting, dan UV Printing membuat kami bisa mengerjakan project kompleks dalam satu atap.",
+      "image": "",
+      "buttonText": "",
+      "buttonUrl": ""
+    }
+  ],
+  "showcase": {
+    "title": "Hasil Cetak Real",
+    "subtitle": "Beberapa project yang sudah kami kerjakan.",
+    "items": [
+      {
+        "image": "",
+        "category": "3D Print",
+        "title": "Batch Custom Keychain & Box",
+        "subtitle": "FDM Precision + Custom Packaging"
+      },
+      {
+        "image": "",
+        "category": "Printing",
+        "title": "Cetak Buku & Notebook Spiral",
+        "subtitle": "Full Color Cover + Jilid Spiral"
+      },
+      {
+        "image": "",
+        "category": "3D Print",
+        "title": "Merchandise Keychain Series",
+        "subtitle": "PLA+ Durable & High Detail"
+      },
+      {
+        "image": "",
+        "category": "Laser + UV",
+        "title": "Akrilik Signage & Plakat",
+        "subtitle": "Laser CO2 + Mirror UV Print"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Dengar apa kata pelanggan kami",
+    "items": [
+      {
+        "name": "Rina",
+        "date": "2026-09-12",
+        "rating": 5,
+        "text": "Recommended seller, hasilnya rapi banget."
+      },
+      {
+        "name": "Budi",
+        "date": "2026-08-30",
+        "rating": 5,
+        "text": "Mantap, pengerjaan cepat dan sesuai request."
+      },
+      {
+        "name": "Sari",
+        "date": "2026-08-14",
+        "rating": 5,
+        "text": "Wajib order lagi, adminnya fast response."
+      },
+      {
+        "name": "Dimas",
+        "date": "2026-07-21",
+        "rating": 5,
+        "text": "Trusted seller, rapih dan cepat."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Pertanyaan yang sering ditanyakan",
+    "items": [
+      {
+        "question": "Di mana lokasi workshop NAMA STUDIO?",
+        "answer": "Workshop kami berada di Bandung, Jawa Barat. Kami melayani pelanggan di Bandung dan sekitarnya untuk ambil langsung, serta mengirim ke seluruh Indonesia lewat ekspedisi."
+      },
+      {
+        "question": "Layanan apa saja yang tersedia?",
+        "answer": "3D printing FDM dan resin SLA, UV printing flatbed & rotary (akrilik, kayu, logam, tumbler), laser cutting & grafir CO2 (area 30×30 cm), serta cetak stiker vinyl, chromo, dan die-cut."
+      },
+      {
+        "question": "Apakah bisa order satuan?",
+        "answer": "Bisa. Kami menerima order satuan untuk prototype maupun hadiah, dan juga produksi batch untuk merchandise atau kebutuhan perusahaan."
+      },
+      {
+        "question": "Berapa lama waktu pengerjaan?",
+        "answer": "Umumnya 1–3 hari kerja untuk order satuan, dan 3–7 hari kerja untuk order batch, tergantung ukuran, jumlah, dan antrean produksi. Estimasi pasti diberikan saat konsultasi."
+      },
+      {
+        "question": "File desain apa yang diterima?",
+        "answer": "Untuk 3D print: STL, OBJ, 3MF, atau STEP. Untuk laser cutting dan UV print: AI, SVG, PDF, atau DXF. Belum punya desain? Tim kami bisa bantu membuatkan."
+      },
+      {
+        "question": "Bagaimana cara pesan dan minta penawaran harga?",
+        "answer": "Kirim detail kebutuhan (foto/desain, ukuran, bahan, jumlah) lewat WhatsApp. Konsultasi gratis, dan penawaran harga dikirim setelah detail diterima."
+      }
+    ]
+  }
+}

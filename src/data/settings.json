@@ -1,0 +1,65 @@
+{
+  "siteUrl": "https://namastudio.id",
+  "brandName": "NAMA STUDIO",
+  "brandTagline": "3D Print & Custom Services",
+  "logo": "",
+  "seoTitle": "Jasa 3D Print, UV Print & Laser Cutting di Bandung | NAMA STUDIO",
+  "seoDescription": "Workshop 3D print, UV print, dan laser cutting CO2 di Bandung. Prototype, merchandise custom, gantungan kunci, plakat akrilik. Order satuan hingga batch, kirim ke seluruh Indonesia.",
+  "ogImage": "",
+  "description": "NAMA STUDIO adalah workshop manufaktur kustom di Bandung yang melayani 3D printing (FDM & resin SLA), UV printing, laser cutting CO2, dan custom printing — untuk order satuan maupun produksi batch, dengan pengiriman ke seluruh Indonesia.",
+  "foundingYear": "2022",
+  "whatsapp": "6281234567890",
+  "waMessage": "Halo, saya ingin bertanya tentang jasa custom.",
+  "email": "",
+  "instagramHandle": "@namastudio",
+  "instagramUrl": "https://instagram.com/",
+  "marketplaceLabel": "Tokopedia Store",
+  "marketplaceUrl": "https://tokopedia.com/",
+  "googleMapsUrl": "https://maps.google.com/",
+  "catalogPdf": "",
+  "streetAddress": "Jl. Contoh No. 1",
+  "city": "Bandung",
+  "province": "Jawa Barat",
+  "postalCode": "40100",
+  "latitude": "",
+  "longitude": "",
+  "areaServed": [
+    {
+      "name": "Bandung"
+    },
+    {
+      "name": "Cimahi"
+    },
+    {
+      "name": "Jawa Barat"
+    },
+    {
+      "name": "Seluruh Indonesia (via ekspedisi)"
+    }
+  ],
+  "hours": [
+    {
+      "label": "Senin – Sabtu",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "09:00",
+      "closes": "17:00",
+      "closed": false
+    },
+    {
+      "label": "Minggu & Tanggal Merah",
+      "days": [
+        "Sunday"
+      ],
+      "opens": "",
+      "closes": "",
+      "closed": true
+    }
+  ]
+}
