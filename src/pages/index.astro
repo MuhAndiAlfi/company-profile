@@ -64,11 +64,16 @@ const marquee = [...clients.items, ...clients.items];
             <a href={waLink} target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 font-semibold text-white shadow-lg shadow-brand-500/25 hover:bg-brand-600">
               <Icon name="wa" class="h-5 w-5" /> Konsultasi Gratis
             </a>
-            {settings.catalogPdf && (
-              <a href={asset(settings.catalogPdf)} target="_blank" rel="noopener" class="inline-flex items-center rounded-full border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-800 hover:border-brand-500 hover:text-brand-600">
-                PDF Katalog
-              </a>
-            )}
+            <!-- Ada PDF → buka PDF; belum ada → gulir ke Showcase Karya -->
+            <a
+              href={settings.catalogPdf ? asset(settings.catalogPdf) : "#katalog"}
+              target={settings.catalogPdf ? "_blank" : undefined}
+              rel={settings.catalogPdf ? "noopener" : undefined}
+              class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-800 hover:border-brand-500 hover:text-brand-600"
+            >
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.04A8.97 8.97 0 0 0 6 3.75c-1.05 0-2.06.18-3 .51v14.25A8.99 8.99 0 0 1 6 18c2.3 0 4.4.87 6 2.29m0-14.25a8.97 8.97 0 0 1 6-2.29c1.05 0 2.06.18 3 .51v14.25A8.99 8.99 0 0 0 18 18a8.97 8.97 0 0 0-6 2.29m0-14.25v14.25" /></svg>
+              Lihat Katalog
+            </a>
           </div>
           <ul class="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-slate-700">
             {hero.highlights.map((h) => (
@@ -149,7 +154,7 @@ const marquee = [...clients.items, ...clients.items];
     </div>
 
     <!-- Showcase -->
-    <section class="bg-ink py-20 text-white">
+    <section id="katalog" class="scroll-mt-20 bg-ink py-20 text-white">
       <div class="mx-auto max-w-7xl px-4 sm:px-6">
         <div class="max-w-2xl">
           <p class="text-sm font-semibold uppercase tracking-wider text-brand-500">• Showcase Karya</p>

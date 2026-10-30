@@ -166,7 +166,7 @@ collections:
           - { label: Nama marketplace, name: marketplaceLabel, widget: string }
           - { label: Link marketplace, name: marketplaceUrl, widget: string, pattern: ["^https?://", "Harus diawali http:// atau https://"] }
           - { label: Link Google Maps / Google Business Profile, name: googleMapsUrl, widget: string, required: false, pattern: ["^https?://", "Harus diawali http:// atau https://"] }
-          - { label: PDF Katalog, name: catalogPdf, widget: file, required: false, hint: "Tombol PDF Katalog muncul hanya kalau file ini diisi." }
+          - { label: PDF Katalog, name: catalogPdf, widget: file, required: false, hint: "Tombol Lihat Katalog membuka PDF ini. Kalau kosong, tombol menggulir ke Showcase Karya." }
 
           - { label: Alamat jalan, name: streetAddress, widget: string }
           - { label: Kota, name: city, widget: string }
